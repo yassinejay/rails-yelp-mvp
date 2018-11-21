@@ -1,0 +1,14 @@
+<div class="container">
+  <p><strong>Name:</strong><span> </span><%= @restaurant.name %></p>
+  <p><strong>Address:</strong><span> </span><%= @restaurant.address %></p>
+  <p><strong>Category:</strong><span> </span><%= @restaurant.category %></p>
+
+
+  <%= link_to 'Edit restaurant', edit_restaurant_path %>
+
+  <%= link_to 'Delete restaurant', restaurant_path(@restaurant), method: :delete %>
+
+  <%= link_to 'Return to all restaurants', restaurants_path %>
+    <%= link_to 'all reviews', restaurant_reviews_path(@restaurant) %>
+
+</div>

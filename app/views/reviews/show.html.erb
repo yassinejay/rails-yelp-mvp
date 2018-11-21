@@ -1,0 +1,13 @@
+<div class="container">
+
+  <p><strong>content:</strong><span> </span><%= @review.content %></p>
+  <p><strong>rating:</strong><span> </span><%= '⭐️' * (@review.rating || 0) %></p>
+  <div class= "flex">
+  <div class="justify-content-sm-between">
+  <%= link_to 'all reviews', restaurant_reviews_path(@restaurant), class: "btn btn-primary bg-primary" %>
+  </div>
+  <div>
+	  <%= link_to 'Delete review', restaurant_review_path(@restaurant, @review), , class: "btn btn-primary bg-primary" method: :delete %>
+  </div>
+</div>
+</div>

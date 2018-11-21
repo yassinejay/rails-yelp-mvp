@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>All Reviews for <%= @restaurant.name %></h1>
+    
+    
+    
+<ul class="list-group">
+  <% @reviews.each do |review| %>
+    <li class="list-group-item flexbox-between">
+      <%= link_to restaurant_review_path(@restaurant, review) do %>
+        <%= review.content %>
+        <% end %>
+        <p>rating: <%= '⭐️' * (review.rating || 0) %></p>
+    </li>
+  <% end %>
+</ul>   
+</div>
+<div class= "flex">
+  <div class="justify-content-sm-between
+">
+    <%= link_to 'Add a review', new_restaurant_review_path, class: "btn btn-primary bg-primary" %>
+  </div>
+  <div>
+    <%= link_to restaurant_path(@restaurant), class: "btn btn-primary" do %>
+    <span>Back to <%= @restaurant.name%> <span>
+    <%end%>
+  </div>
+</div>

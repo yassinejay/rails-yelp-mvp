@@ -1,0 +1,18 @@
+<div class="container">
+
+<%= simple_form_for(@restaurant) do |f| %>
+
+  <!-- simple_form_for(@restaurant)
+  if @restaurant is new record
+    => @restaurant.class => Restaurant
+    => class.downcase + 's_path' => 'restaurants_path' -->
+
+  <%= f.input :name %>
+
+  <%= f.input :address %>
+  <%= f.input :category, collection: ['chinese', 'italian', 'japanese', 'french', 'belgian']%>
+
+  <%= f.button :submit, class: "btn btn-outline-success" %>
+<% end %>
+</div>
+
